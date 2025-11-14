@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NP Construcciones</title>
+    <link rel="icon" href="img/nplogo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gris-grafito: #383838;
+            --blanco-humo: #f5f5f5;
+            --azul-acero: #264653;
+            --verde-petroleo: #2a9d8f;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--gris-grafito);
+            background-color: white;
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+        nav.navbar {
+            background-color: var(--blanco-humo);
+            border-bottom: 1px solid #ddd;
+        }
+
+        nav .navbar-brand {
+            font-weight: 700;
+            color: var(--gris-grafito);
+            letter-spacing: 0.5px;
+        }
+
+        nav .nav-link {
+            color: var(--gris-grafito) !important;
+            font-weight: 500;
+            margin: 0 6px;
+            transition: color 0.3s ease;
+        }
+
+        nav .nav-link:hover {
+            color: var(--verde-petroleo) !important;
+        }
+
+        /* HEADER */
+        header {
+            background:
+                linear-gradient(rgba(100, 99, 99, 0.65), rgba(20, 20, 20, 0.65)),
+        url('img/fondo2.jpg');
+            background-size: cover; 
+            background-position: 50% 40%;
+            color: white;
+            text-align: center;
+            padding: 150px 20px 200px 20px;
+        }
+
+        header h1 {
+            font-weight: 700;
+            font-size: 3rem;
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        header p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 20px auto;
+        }
+
+        header .btn {
+            background-color: var(--verde-petroleo);
+            border: none;
+        }
+
+        header .btn:hover {
+            background-color: var(--gris-grafito);
+        }
+
+        /* SECCIONES */
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            font-weight: 700;
+            color: var(--azul-acero);
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        #nosotros {
+            background-color: var(--blanco-humo);
+        }
+
+        #servicios {
+            background-color: white;
+        }
+
+        #servicios h3 {
+            color: var(--verde-petroleo);
+        }
+
+        #servicios p {
+            color: #555;
+        }
+
+        #servicios img {
+            border-radius: 10px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        #servicios img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* PROYECTOS */
+        #proyectos {
+            background-color: var(--blanco-humo);
+        }
+
+        #proyectos img {
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        #proyectos img:hover {
+            transform: scale(1.05);
+        }
+
+        /* CONTACTO */
+        #contacto .btn {
+            background-color: var(--verde-petroleo);
+            border: none;
+        }
+
+        #contacto .btn:hover {
+            background-color: var(--azul-acero);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--blanco-humo);
+            color: var(--gris-grafito);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer img {
+            height: 60px;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        footer a {
+            color: var(--azul-acero);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* BOTÓN WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            z-index: 999;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Animaciones */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#inicio">
+                <img src="img/nplogo5.png" alt="NP Logo" height="50" class="me-2">
+                NP Construcciones
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header id="inicio">
+        <h1>Construimos tu futuro</h1>
+        <p>Más de 10 años de experiencia en obras civiles, remodelaciones y proyectos llave en mano. Comprometidos con
+            la calidad y la confianza.</p>
+        <a href="#contacto" class="btn btn-lg mt-3 fw-semibold text-white">Solicitar presupuesto</a>
+    </header>
+
+    <!-- NOSOTROS -->
+    <section id="nosotros" class="text-center fade-in">
+        <div class="container">
+            <h2 class="section-title">Sobre Nosotros</h2>
+            <p class="lead mx-auto" style="max-width:800px;">
+                En <strong>NP Construcciones</strong> trabajamos con profesionalismo y dedicación en cada proyecto.
+                Nuestro objetivo es brindar soluciones eficientes y duraderas, garantizando resultados que superen las
+                expectativas.
+            </p>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="py-5 fade-in">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Servicios</h2>
+
+            <div class="row g-5 align-items-center">
+                <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80"
+                        class="img-fluid shadow" alt="Construcción">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="fw-bold">CONSTRUCCIÓN</h3>
+                    <p class="fs-5">
+                        Ofrecemos servicios de construcción de obra nueva y reformas, garantizando un alto estándar de
+                        calidad en cada proyecto. Nos enfocamos en cumplir plazos, optimizar recursos y entregar
+                        resultados duraderos.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-5 align-items-center flex-md-row-reverse mt-5">
+                <div class="col-md-6">
+                    <img src="img/mantenimiento.jpg" class="img-fluid shadow" alt="Mantenimiento">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="fw-bold">MANTENIMIENTO</h3>
+                    <p class="fs-5">
+                        Realizamos mantenimiento preventivo y correctivo para prolongar la vida útil de las
+                        instalaciones y equipos. Trabajamos con personal especializado y protocolos de seguridad en cada
+                        intervención.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-5 align-items-center mt-5">
+                <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80"
+                        class="img-fluid shadow" alt="Arquitectura">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="fw-bold">ARQUITECTURA</h3>
+                    <p class="fs-5">
+                        Ofrecemos servicios de diseño arquitectónico con especial énfasis en la estética y la
+                        funcionalidad. Buscamos combinar belleza, eficiencia y confort en cada proyecto.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="text-center fade-in">
+        <div class="container">
+            <h2 class="section-title">Proyectos Realizados</h2>
+            <div class="row g-4">
+                <div class="col-md-4"><img
+                        src="https://images.unsplash.com/photo-1590650046871-92c887180603?auto=format&fit=crop&w=800&q=80"
+                        class="img-fluid shadow" alt=""></div>
+                <div class="col-md-4"><img
+                        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+                        class="img-fluid shadow" alt=""></div>
+                <div class="col-md-4"><img
+                        src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80"
+                        class="img-fluid shadow" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="fade-in">
+        <div class="container text-center">
+            <h2 class="section-title">Contacto</h2>
+            <p class="lead">¿Tenés un proyecto en mente? Envíanos tu consulta y te responderemos a la brevedad.</p>
+            <form onsubmit="enviarMail(event)" class="mx-auto" style="max-width:600px;">
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" id="correo" placeholder="Tu correo" required>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" id="mensaje" rows="4" placeholder="Mensaje" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-lg fw-semibold text-white">Enviar por Mail</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <img src="img/nplogo5.png" alt="NP Construcciones Logo">
+        <p class="mb-1">© 2025 NP Construcciones - Todos los derechos reservados</p>
+        <p>📞 +54 11 2242-4166 | ✉️ <a href="mailto:npconstrucciones@mail.com">npconstrucciones@mail.com</a></p>
+        <p><a href="https://www.instagram.com/construcciones.np/" target="_blank">Instagram</a></p>
+    </footer>
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/5491122424166" target="_blank" class="whatsapp-float">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
+            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+            <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+        </svg>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const elements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.2 });
+        elements.forEach(el => observer.observe(el));
+
+        function enviarMail(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value.trim();
+            const correo = document.getElementById('correo').value.trim();
+            const mensaje = document.getElementById('mensaje').value.trim();
+            const destinatario = "tuccieliasluis@gmail.com";
+            const asunto = `Consulta de ${nombre}`;
+            const cuerpo = `Nombre: ${nombre}\nCorreo: ${correo}\n\nMensaje:\n${mensaje}`;
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${destinatario}&su=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+            const mailtoUrl = `mailto:${destinatario}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+            const win = window.open(gmailUrl, '_blank');
+            if (!win) window.location.href = mailtoUrl;
+        }
+    </script>
+</body>
+
+</html>
